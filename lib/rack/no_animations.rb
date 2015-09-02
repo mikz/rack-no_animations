@@ -3,7 +3,7 @@ module Rack
     TEXT_HTML = %r{text/html}.freeze
     CONTENT_LENGTH = 'Content-Length'.freeze
 
-    DISABLE_ANIMATIONS_SNIPPET = <<-EOF
+    DISABLE_ANIMATIONS_SNIPPET = <<-EOF.strip
 <script>if (typeof jQuery !== 'undefined') { jQuery.fx.off = true }</script>
 <style>
 * {
@@ -24,7 +24,7 @@ module Rack
    animation: none !important;
 }
 </style>
-    EOF
+EOF
     SNIPPET_LENGTH = DISABLE_ANIMATIONS_SNIPPET.length
 
     def initialize(app)
@@ -69,7 +69,7 @@ module Rack
       end
 
       if (body_index = body.rindex('</body>'.freeze))
-        body.insert(body_index - 7, DISABLE_ANIMATIONS_SNIPPET)
+        body.insert(body_index, DISABLE_ANIMATIONS_SNIPPET)
       end
 
       [ body_index, [ body ] ]
