@@ -4,7 +4,7 @@ module Rack
     CONTENT_LENGTH = 'Content-Length'.freeze
 
     DISABLE_ANIMATIONS_SNIPPET = <<-EOF
-<scrip>if (typeof jQuery !== 'undefined') { jQuery.fx.off = true }</script>
+<script>if (typeof jQuery !== 'undefined') { jQuery.fx.off = true }</script>
 <style>
 * {
    -o-transition: none !important;
