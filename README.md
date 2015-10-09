@@ -27,6 +27,12 @@ in `config/environments/test.rb` add the middleware to rails like:
   config.middleware.use Rack::NoAnimations
 ```
 
+If you are using Percy.io, you can disable animations just for Percy:
+
+```ruby
+  config.middleware.use Rack::NoAnimations, Rack::NoAnimations::Percy
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
