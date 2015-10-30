@@ -8,7 +8,9 @@ Stops CSS/jQuery animations by injecting style overrides and using `jQuery.fx.of
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'rack-no_animations'
+group :test do
+  gem 'rack-no_animations'
+end
 ```
 
 And then execute:
